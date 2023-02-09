@@ -19,8 +19,8 @@ GROUP BY teachers.name,cohorts.name
 ORDER BY teacher;
 `)
 .then(res => {
-  res.rows.forEach(user => {
-console.log(res.rows);
+  res.rows.forEach(row => {
+    console.log(`${row.cohort}: ${row.teacher}`);
   })
 })
 .catch(err => console.error('query error', err.stack));
